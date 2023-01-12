@@ -1,0 +1,10 @@
+name: plugin_prova # nome del plugin, può solo avere lettere, numeri e _-\., no spazi
+version: 1.0 # versione del plugin
+main: com.pare.Main # la classe contenente onEnable e onDisable, deve implementare JavaPlugin
+
+commands:
+  sium:
+    description: siumma fortissimo # descrizione
+    usage: /sium # viene inviato ai player con /help o quando onCommand ritorna false
+                 # può essere usato anche per descrivere i parametri del comando
+                 # ad esempio 'usage: /tp <player>'
