@@ -1,6 +1,8 @@
 package com.pare;
 
+import com.pare.commands.DelayedCommand;
 import com.pare.commands.ExampleCommand;
+import com.pare.commands.RepeatingCommand;
 import com.pare.events.EventHandlers;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -10,6 +12,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 // @SuppressWarnings serve a ignorare qualsiasi errore inserito nelle ( )
 @SuppressWarnings("unused")
 public class Main extends JavaPlugin {
+
+    public static JavaPlugin Plugin;
+
     // IDEA considera getCommand() un errore perchè il comando getCommand("sium") potrebbe ritornare null
     // se il comando sium non è dichiarato in plugin.yml
     // però 100% non lo è perchè è dichiarato alla riga 6
@@ -17,6 +22,12 @@ public class Main extends JavaPlugin {
     @Override
     // onEnable è il metodo che viene chiamato per primo nel plugin
     public void onEnable() {
+        // imposta Main.Plugin a this (this significa "l'oggetto che sta eseguendo il metodo")
+        // in questo caso, this è il JavaPlugin che viene dichiarato da spigot quando starta il server
+        // una volta dichiarato Main.Plugin, si può usare in altre classi che richiedono un JavaPlugin
+        // come parametro (DelayedCommand)
+        Plugin = this;
+
         // definizione: PluginManager.registerEvents(Listener listener, Plugin plugin)
         // listener è una classe qualsiasi che implementa l'interfaccia Listener
         // plugin è il plugin a cui si vogliono attivare gli eventi
@@ -28,6 +39,8 @@ public class Main extends JavaPlugin {
         // e deve avere esattamente 1 metodo '@Override
         //                                    public boolean onCommand(..)'
         getCommand("sium").setExecutor(new ExampleCommand());
+        getCommand("delaytest").setExecutor(new DelayedCommand());
+        getCommand("repeattest").setExecutor(new RepeatingCommand());
         // scrive nella console
         Bukkit.getLogger().info("Plugin attivato");
     }

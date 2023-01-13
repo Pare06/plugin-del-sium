@@ -8,3 +8,9 @@ commands:
     usage: /sium # viene inviato ai player con /help o quando onCommand ritorna false
                  # può essere usato anche per descrivere i parametri del comando
                  # ad esempio 'usage: /tp <player>'
+  delaytest:
+    description: scannare
+    usage: /delaytest
+  repeattest:
+    description: scuoiare
+    usage: /repeattest
