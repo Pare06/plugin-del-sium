@@ -10,6 +10,11 @@ import org.jetbrains.annotations.NotNull;
 public class DelayedCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+        // quando c'è da dichiarare una variable che rappresenta dei tick
+        // è più worth usare (20 * N secondi) invece di N tick perchè è più easy da leggere
+        // ad esempio, se bisogna aspettare 1 ora per fare della roba
+        // è più facile da leggere (20 * 3600) invece di (72000)
+        // o ancora meglio, (20 * 60 * 60 * 1), ma forse è un pò troppo
         int ticks = 20 * 5; // 5 secondi
 
         // per eseguire del codice dopo N tick si può usare la classe BukkitRunnable
