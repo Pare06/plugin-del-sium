@@ -28,7 +28,6 @@ public class RepeatingCommand implements CommandExecutor {
             public void run() {
                 timesRan[0]++;
 
-                // String.valueOf(Object obj) trasforma o in una stringa, se possibile
                 commandSender.sendMessage(String.format("Sono passati %s secondi!", timesRan[0]));
 
                 // se run() è stato eseguito 10 volte
