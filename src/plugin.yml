@@ -17,3 +17,6 @@ commands:
   item:
     description: regala una spada per fare la strage di capaci
     usage: /item
+  copypasta:
+    description: sium
+    usage: /copypasta

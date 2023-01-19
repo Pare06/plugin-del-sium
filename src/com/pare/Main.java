@@ -1,7 +1,7 @@
 package com.pare;
 
 import com.pare.commands.*;
-import com.pare.events.EventHandlers;
+import com.pare.events.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,6 +32,7 @@ public class Main extends JavaPlugin {
         // il metodo attiva tutti gli eventi in EventHandlers (tutti i metodi con attributo @EventHandler)
         // nel plugin 'this', ovvero la classe Main
         getServer().getPluginManager().registerEvents(new EventHandlers(), this);
+        getServer().getPluginManager().registerEvents(new GUIEvents(), this);
         // assegna la classe ExampleCommand al comando sium
         // la classe deve implementare CommandExecutor
         // e deve avere esattamente 1 metodo '@Override
@@ -40,6 +41,7 @@ public class Main extends JavaPlugin {
         getCommand("delaytest").setExecutor(new DelayedCommand());
         getCommand("repeattest").setExecutor(new RepeatingCommand());
         getCommand("item").setExecutor(new ItemCommand());
+        getCommand("copypasta").setExecutor(new GUICommand());
         // scrive nella console
         Bukkit.getLogger().info("Plugin attivato");
     }
