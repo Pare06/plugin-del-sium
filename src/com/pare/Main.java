@@ -1,8 +1,6 @@
 package com.pare;
 
-import com.pare.commands.DelayedCommand;
-import com.pare.commands.ExampleCommand;
-import com.pare.commands.RepeatingCommand;
+import com.pare.commands.*;
 import com.pare.events.EventHandlers;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -41,6 +39,7 @@ public class Main extends JavaPlugin {
         getCommand("sium").setExecutor(new ExampleCommand());
         getCommand("delaytest").setExecutor(new DelayedCommand());
         getCommand("repeattest").setExecutor(new RepeatingCommand());
+        getCommand("item").setExecutor(new ItemCommand());
         // scrive nella console
         Bukkit.getLogger().info("Plugin attivato");
     }

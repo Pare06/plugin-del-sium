@@ -22,7 +22,6 @@ public class RepeatingCommand implements CommandExecutor {
         // quindi va bene
         final int[] timesRan = {0};
         int ticksDelay = 20 * 1; // 1 secondo
-
         new BukkitRunnable() {
             @Override
             public void run() {

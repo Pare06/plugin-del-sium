@@ -14,3 +14,6 @@ commands:
   repeattest:
     description: scuoiare
     usage: /repeattest
+  item:
+    description: regala una spada per fare la strage di capaci
+    usage: /item
