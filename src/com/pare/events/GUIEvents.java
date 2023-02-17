@@ -48,7 +48,7 @@ public class GUIEvents implements Listener {
                 case "simone" -> SIMONE;
                 case "bona dea" -> BONADEA;
                 // vetro?
-                default -> NON_SONO_FILIPPO_CORTI;
+                default -> NON_SONO_DISABILE;
             };
 
             player.sendMessage(message);
@@ -105,5 +105,5 @@ public class GUIEvents implements Listener {
             perchè quel macaco di Mihai Marocci chiama la gheng di Ibrahim Moutawakil e Matteo Ragoni.
             """;
 
-    private static final String NON_SONO_FILIPPO_CORTI = "sei disabile dio boia hai cliccato sul vetro";
+    private static final String NON_SONO_DISABILE = "sei disabile dio boia hai cliccato sul vetro";
 }
